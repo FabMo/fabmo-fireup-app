@@ -33,23 +33,15 @@
             <hr width = "90%" noshade>
               <span class="label label-info"> USE ALMOST ALWAYS </span>
               <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ ZERO </a> Setting the Zero Location for X, Y, and Z Axes</h3>
-                <p>If you're going to manipulate the tool directly, you may wish to display the Digital ReadOut, or DRO.  Although you can implement your own DRO using HTML/Javascript, it's probably better to use the dashboard's built-in DRO.</p>
+                <p>After you turn on your Handibot, the first thing you will typically want to do is run this routine which accurately sets the 0 location for each axis. It does this by touching the end-stops and backing off an exact know distance. As you get more experienced, you may want to move your zero locations to better suit your work or a particular project. But you will still want to start each day running this routine.</p>
             </div>
 
             <div>
               <hr width = "90%" noshade>
-              <span class="label label-warning"> USE AFTER BIT CHANGE </span>
+              <span class="label label-warning"> USE AFTER EACH BIT CHANGE </span>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
-                <p>If you're going to manipulate the tool directly, you may wish to display the Digital ReadOut, or DRO.  Although you can implement your own DRO using HTML/Javascript, it's probably better to use the dashboard's built-in DRO.  To control display of the DRO, you use the <code>showDRO</code> and <code>hideDRO</code> functions.</p>
+                <p>When you run the XYZ Zeroing routine, the Z-Axis will be zeroed for the last cutter that you measured. So, as long as you don't change cutters, the Z-Zero will be accurate. But each time you change a cutter, in order to make use of the automatic zeroing of the Z axis, you will need to re-measure the cutter. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate it into position, then click this button.</p>
             </div>  
-
-            <p><br></p>
-            <p><br></p>
-            <h3>Organization</h3>
-            <p>This app is organized to be easy to read and to edit.  The <strong>js</strong> directory contains a collection of individual javascript files, each of which corresponds to a tab in this view.  If you are interested in the example on a particular tab, examine its HTML code in <strong>index.html</strong> and corresponding javascript functions in the <strong>.js</strong> file that corresponds to the tab name.</p>
-
-            <h3>Conventions</h3>
-            <p>In the documentation for these examples, file and directory names are shown in <strong>this style</strong> while function and variable names <code>look like this</code></p>
         </div>
 
         <!-- Control Pane -->
