@@ -57,7 +57,7 @@ $("#job-go").click(function(evt) {
     var passdepth = validateInput($("#job-input-passdepth"));
 
     code = makeCircle(cx,cy,d,zpullup,depth,seg_size,feedrate, passdepth);
-    fabmoDashboard.submitJob(code, {filename : 'example-circle.nc',
+    fabmo.submitJob(code, {filename : 'example-circle.nc',
                                     name : d + '" Diameter Circle',
                                     description : d + '" diameter circle centered at ' + cx + ',' + cy + ' at a depth of ' + depth + '"' 
     })

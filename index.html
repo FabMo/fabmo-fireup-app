@@ -11,7 +11,10 @@
   <body>
     <script src="js/lib/jquery.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
-    <script src="js/lib/dashboard.js"></script>
+    <script src="js/lib/fabmo.js"></script>
+  	<script type="text/javascript">
+  		var fabmo = new FabMoDashboard();
+  	</script>
 
     <div class="container">
       <!-- Nav tabs -->
@@ -19,39 +22,38 @@
         <li class="active"><a href="#tab-help" role="tab" data-toggle="tab">FireUp!</a></li>
         <li><a href="#tab-control" role="tab" data-toggle="tab">Details</a></li>
         <li><a href="#tab-dashboard" role="tab" data-toggle="tab">Preferences</a></li>
-        <li><a href="#tab-jobs" role="tab" data-toggle="tab">Maintenance</a></li>
-        <li><a href="#tab-config" role="tab" data-toggle="tab">HELP</a></li>
+        <li><a href="#tab-jobs" role="tab" data-toggle="tab">Maintenance Info</a></li>
+        <li><a href="#tab-config" role="tab" data-toggle="tab">Getting HELP</a></li>
       </ul>
 
       <div class="tab-content">
         <!-- FireUp!/start pane -->
         <div class="tab-pane active" id="tab-help">
             <h2><strong>FireUp!</strong></h2>
-            <p>There are a couple of things you will probably need to do when you FireUp your Handibot to start work. We make these little tasks all a quick 'CLICK' for you right here. And, we've provide some additional tabs with deeper information that may be useful as you learn more about using your tool. Now, first things first ... </p>
+            <p>Here are a few things you will usually need to do when you FireUp your Handibot to start work. Just 'CLICK' as needed ...</p>
             
             <div>
             <hr width = "90%" noshade>
-              <span class="label label-info"> USE ALMOST ALWAYS </span>
+              <span class="label label-info"> USE ALMOST ALWAYS at StartUp</span>
               <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ ZERO </a> Setting the Zero Location for X, Y, and Z Axes</h3>
-                <p>After you turn on your Handibot, the first thing you will typically want to do is run this routine which accurately sets the 0 location for each axis. It does this by touching the end-stops and backing off an exact know distance. As you get more experienced, you may want to move your zero locations to better suit your work or a particular project. But you will still want to start each day running this routine.</p>
+                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the 0 location for each axis with this routine.</p>
             </div>
 
             <div>
               <hr width = "90%" noshade>
-              <span class="label label-warning"> USE AFTER EACH BIT CHANGE </span>
+              <span class="label label-warning"> USE AFTER EACH Bit Change </span>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
-                <p>When you run the XYZ Zeroing routine, the Z-Axis will be zeroed for the last cutter that you measured. So, as long as you don't change cutters, the Z-Zero will be accurate. But each time you change a cutter, in order to make use of the automatic zeroing of the Z axis, you will need to re-measure the cutter. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate it into position, then click this button.</p>
+                <p>If you have changed your cutter, you need to re-measure its length. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate the plate into position from the right, then click this button.</p>
             </div>  
         </div>
 
         <!-- Control Pane -->
         <div class="tab-pane" id="tab-control">
-            <h2>Control/Feedback</h2>
-
-
-            <h3>Manually Controlling the Tool</h3>
-            <p>For simple operations, G-Code can be executed <em>immediately</em> on the tool using the <code>runGCode</code> function.  The example below collects a position from the user, and moves to the tool to that position when requested using the runGCode function.</p>
-
+            <h2>Detailed Info on this FireUp! App</h2>
+            <p>This is a "helper" App for you Handibot. After you become knowledgeable and comfortable in the use of your tool, you may find you don't use it anymore. Feel free to delete it (you can alwasy get it back from the Handibot website)</p>
+            <h3>Setting the XYZ Zero Locations</h3>
+            <p>Zeroing of an axis is done by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set. This is done automatically for you.</p>
+            <p>As you get more experienced, you may want to move your zero locations to better suit your work or a particular project. But you will still want to start each day running this routine.For simple operations, G-Code can be executed <em>immediately</em> on the tool using the <code>runGCode</code> function.  The example below collects a position from the user, and moves to the tool to that position when requested using the runGCode function.</p>
               <p>
               <form class="form-inline" id="form-nav">
                 <div class="form-group has-success">
@@ -79,7 +81,7 @@
               </p>
 
               <h3>Getting Tool Feedback</h3>
-              <p>Fabmo provides status reports when the system status changes, or on request.  Apps can subscribe to these notifications, and convey information about what's happening with the tool.  If you are running this app on an actual Fabmo system, you can drive the tool around manually, and observe these numbers changing.</p>
+              <p>When you run the XYZ Zeroing routine, the Z-Axis will be zeroed for the last cutter that you measured. So, as long as you don't change cutters, the Z-Zero will be accurate. But each time you change a cutter, in order to make use of the automatic zeroing of the Z axis, you will need to re-measure the cutter. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate it into position, then click this button.</p>
               <p>
               <form class="form-inline" id="form-nav">
                 <div class="form-group">
