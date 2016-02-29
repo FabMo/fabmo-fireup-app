@@ -19,220 +19,122 @@
     <div class="container">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#tab-help" role="tab" data-toggle="tab">FireUp!</a></li>
-        <li><a href="#tab-control" role="tab" data-toggle="tab">Details</a></li>
-        <li><a href="#tab-dashboard" role="tab" data-toggle="tab">Preferences</a></li>
-        <li><a href="#tab-jobs" role="tab" data-toggle="tab">Maintenance Info</a></li>
+        <li class="active"><a href="#tab-startfire" role="tab" data-toggle="tab">FireUp!</a></li>
+        <li><a href="#tab-details" role="tab" data-toggle="tab">Details</a></li>
+        <li><a href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
         <li><a href="#tab-config" role="tab" data-toggle="tab">Getting HELP</a></li>
       </ul>
 
       <div class="tab-content">
         <!-- FireUp!/start pane -->
-        <div class="tab-pane active" id="tab-help">
+        <div class="tab-pane active" id="tab-startfire">
             <h2><strong>FireUp!</strong></h2>
-            <p>Here are a few things you will usually need to do when you FireUp your Handibot to start work. Just 'CLICK' as needed ...</p>
+            <p>Here are a few things you will usually need to do when you FireUp your Handibot to start work. Just 'CLICK' the green buttons as needed ...</p>
             
             <div>
             <hr width = "90%" noshade>
               <span class="label label-info"> USE ALMOST ALWAYS at StartUp</span>
               <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ ZERO </a> Setting the Zero Location for X, Y, and Z Axes</h3>
-                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the 0 location for each axis with this routine.</p>
+                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the 0 location for each axis. Just click this green button.</p>
             </div>
             <div>
               <hr width = "90%" noshade>
               <span class="label label-warning"> USE AFTER EACH Bit Change </span>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
-                <p>If you have changed your cutter, you need to re-measure its length. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate the plate into position from the right, then click this button.</p>
+                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by the tool "touching-off" on the Z-Zeroing plate. Rotate the plate into position (its an aluminum bar on the right inside of the base), then click this button.</p>
             </div>  
             <div>
               <hr width = "90%" noshade>
               <hr width = "90%" noshade>
               <span class="label label-warning"> OTHER USEFUL MOVES </span>
-              <h3><a class="btn btn-success" id="call-home"> Move Home </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-back"> Move to Back </a> </h3>
+              <h3><a class="btn btn-success" id="call-home"> Move Home </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-back"> Move to Back </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-center"> Move to Center </a> </h3>
             </div>  
         </div>
 
-        <!-- Control Pane -->
-        <div class="tab-pane" id="tab-control">
+        <!-- Details Pane -->
+        <div class="tab-pane" id="tab-details">
             <h2>Detailed Info on this FireUp! App</h2>
             <p>This is a "helper" App for you Handibot. After you become knowledgeable and comfortable in the use of your tool, you may find you don't use it anymore. Feel free to delete it (you can alwasy get it back from the Handibot website)</p>
             <h3>Setting the XYZ Zero Locations</h3>
-            <p>Zeroing of an axis is done by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set. This is done automatically for you.</p>
-            <p>As you get more experienced, you may want to move your zero locations to better suit your work or a particular project. But you will still want to start each day running this routine.For simple operations, G-Code can be executed <em>immediately</em> on the tool using the <code>runGCode</code> function.  The example below collects a position from the user, and moves to the tool to that position when requested using the runGCode function.</p>
-              <p>
-              <form class="form-inline" id="form-nav">
-                <div class="form-group has-success">
-                  <div class="input-group">
-                      <span class="input-group-addon">X</span>
-                      <input type="text" class="form-control num-input" id="ctrl-xinput" value="0.000">
-                  </div>
-                </div>
-                <div class="form-group has-success">
-                  <div class="input-group">
-                      <span class="input-group-addon">Y</span>
-                      <input type="text" class="form-control num-input" id="ctrl-yinput" value="0.000">
-                  </div>
-                </div>
-                <div class="form-group has-success">
-                  <div class="input-group">
-                      <span class="input-group-addon">Z</span>
-                      <input type="text" class="form-control num-input" id="ctrl-zinput" value="0.000">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <button id="nav-go" class="btn btn-default">Move Tool</button>
-                </div>
-              </form>
-              </p>
+            	<p>The Zeroing of an axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set.</p>
+            	<p>The back-off distance is determined at the factory and saved as a persistant variable. As you get more experienced, you may want to change the back-off distance in order to move your zero locations to better suit your work, for a particular project, or just to make a slight adjustment of your zero location. You can modify the back-off distance for each axis in the <code>Preferences</code> tab.</p>
+            	<p>Using the XYZ Zero function in this app is the same thing as clicking on <strong>Macro#3</strong> in the system macros, where the motion instructions are stored. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably.</p> 
 
-              <h3>Getting Tool Feedback</h3>
-              <p>When you run the XYZ Zeroing routine, the Z-Axis will be zeroed for the last cutter that you measured. So, as long as you don't change cutters, the Z-Zero will be accurate. But each time you change a cutter, in order to make use of the automatic zeroing of the Z axis, you will need to re-measure the cutter. Measuring the cutter is done by "touching-off" on the Z-Zeroing plate. Rotate it into position, then click this button.</p>
-              <p>
-              <form class="form-inline" id="form-nav">
-                <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon">X</span>
-                      <input type="text" class="form-control num-input" id="ctrl-xdisplay" value="????" readonly>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon">Y</span>
-                      <input type="text" class="form-control num-input" id="ctrl-ydisplay" value="????" readonly>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                      <span class="input-group-addon">Z</span>
-                      <input type="text" class="form-control num-input" id="ctrl-zdisplay" value="????" readonly>
-                  </div>
-                </div>
-              </form>
-              </p>
-              <p><em>In the example above, the tool position will only be filled in once a status report is recieved from the tool.  If you are running the app in <strong>simulation mode</strong> (outside the dashboard) these numbers will never be filled in.</em></p>
+        		<div class="well" id="config-system-config">
+              		Your tool moves around in a Cartesean coordinate system. The X axis (right/left) and the Y axis (back/front) are in the plane of the material. X = 0 and Y = 0 are at the bottom left corner as you face the front of the tool. Moving the tool head to the right is moving in increasing value in the X axis, moving it towards the back is moving it in increasing value the Y axis. Downward movement of the Z axis, the up/down motion of the router, is negative. Zero in the Z is typically set to the height of the surface of the material, though it need not be. To explore the coordinate system, Play with the keypad on in the red, DRO panel on the right:
+					<h3><a class="btn btn-success" id="call-DRO-rollout"> click here if the KEYPAD is not visble </a></h3>
+              		Or even more interesting, try out the "Touch-and-Go App" by clicking here:
+              		<h3><a class="btn btn-success" id="call-touch-and-go"> start: Touch-and-Go </a></h3>
+            	</div>
+
+            <h3>Measuring Bit Length</h3>
+            	<p>Measuring Bit Length is sometimes called Z-Zeoring, because we are really determing the zero location for the tip of the cutter in the Z axis. More importantly for a Handibot, we are determining the back-off distance from the top Z-axis stop to having the tip of the cutter exactly at the material (at Zero). Your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance that we call, "current_cutter_Zoffset". So it is not really a measurement of the actual length of the bit, but the determination of an offset distance that is based on the exposed length of the cutter.</p>
+            	<p>You will also see the "current_cutter_Zoffset" in the <code>Preferences</code> tab.</p>
+
               <script src="js/control.js"></script>
 
         </div>
-        
-         <div class="tab-pane" id="tab-dashboard">
-            <h2>Interacting with the Dashboard</h2>
 
-            <p>The dashboard is the in-browser portion of the FabMo framework.  Using <strong>dashboard.js</strong> you can interact with the dashboard as well as the tool directly.</p>
+        <!-- Preferences Pane -->
+        <div class="tab-pane" id="tab-preferences">
+          <h2>Preference Settings</h2>
+	          <p>Your Handibot contains a number of variables with preset values that is uses in some of the operations it does to assist you. These variables all have default values that come installed with your tool, but you are able to modify them to suit your specific needs. After you change them, the values will persist even when the tool is turned off. They are called "persistent variables".</p>
+	          <p>There are several ways these variables can be modified, but the simplest approach is to just change them here.</p>
 
-            <h3>Displaying the DRO</h3>
-              <p>If you're going to manipulate the tool directly, you may wish to display the Digital ReadOut, or DRO.  Although you can implement your own DRO using HTML/Javascript, it's probably better to use the dashboard's built-in DRO.  To control display of the DRO, you use the <code>showDRO</code> and <code>hideDRO</code> functions.</p>
-              <button id="nav-showdro" class="btn btn-primary">Show the DRO</button>
-              <button id="nav-hidedro" class="btn btn-primary">Hide the DRO</button>
+       	    <!-- Responsive form for inputting preferences -->
+	        <div class="row">
+	             <div class="col-sm-7" style="margin-left: auto; margin-right: auto; text-align: left; ">
+	              <form class="form-horizontal" id="form-jobs">
+	              <h4>Variables for Setting X and Y Zero Location </h4>
+	              <p>These variables are used during zeroing to set the location for X and Y zero. </p>
+	                <div class="form-group">
+	                  <label for="job-input-xpullback" class="col-sm-3 control-label">X Pull-back</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="job-input-cx" value="5">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label for="job-input-ypullback" class="col-sm-3 control-label">Y Pull-back</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="job-input-cx" value="5">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	              <h4>Variables for Setting ZZero Location </h4>
+	              <p>These variables are used during zeroing to set the location for Z zero. </p>
+	                  <div class="form-group">
+	                  <label for="job-input-zlength" class="col-sm-3 control-label">Current Length</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="job-input-cy" value="5">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label for="job-input-zto-surf" class="col-sm-3 control-label">Distance to Surface</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="job-input-d" value="3">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	                <div class="form-group">
+	                  <div class="col-sm-12 has-success" style="text-align: right;">
+	                    <a class="btn btn-success btn-lg" id="pref-save">SAVE</a>&nbsp;&nbsp;<a class="btn btn-warning btn-lg" id="pref-cancel">CANCEL</a>
+	                  </div>
+	                </div>
+	              </form>
+	             </div> 
+	          </div> <!-- row -->
 
-            <h3>Notifying the User</h3>
-              <p>The dashboard has a built in notification system, which you can access using the <code>notify</code> function.  Notifications can have several types including <span class="label label-info">info</span> <span class="label label-success">success</span> <span class="label label-warning">warning</span> and <span class="label label-danger">error</span></p>
-              <button id="dash-info" class="btn btn-info">Info Notify</button>
-              <button id="dash-success" class="btn btn-success">Success Notify</button>
-              <button id="dash-warning" class="btn btn-warning">Warning Notify</button>
-              <button id="dash-error" class="btn btn-danger">Error Notify</button>
-
-            <h3>Switching Apps</h3>
-              <p>Sometimes it's appropriate for an app to hand control over to another app.  A common example of this is jumping from the current app to the previewer, or editor, or job manager.  Each app has an id, and apps can be launched by calling <code>launchApp</code> with the appropriate id.  Only one app runs at a time, so be careful with the <code>launchApp</code> function.  When you call it, you are <em>exiting</em> your app to launch another one!</p>
-              <button id="dash-launch-job-manager" class="btn btn-primary">Launch the Job Manger</button>              
-            
-            <script src="js/dashboard.js"></script>
-        </div>
-
-        <!-- Jobs Pane -->
-        <div class="tab-pane" id="tab-jobs">
-          <h2>Jobs</h2>
-          <p>Most of the time, rather than manipulating the tool directly, you will be interacting with it via the <strong>job manager.</strong>  The job manager is like a "print queue" for the tool, managing work in the form of CAM data for the tool to run.  The workflow of most apps will be to accept the user's input, use it to fill in some sort of parametric design, and post the G-Code resulting from the design process to the tool as a job.</p>
-          <p>If you're running this example in the dashboard, submitting a job will take you immediately to the job manager app, which shows your recently submitted job and gives you the option to run it.  If you're viewing this app standalone in a browser, the dashboard library simulates the job submission by simply downloading the G-Code file.</p>
-          <h3>Hole Cutter</h3>
-          <p> The form below is a very simple parametric design:  Given a few simple inputs, it cuts a circle.  When the <strong>Cut Circle</strong> button is clicked, The G-code for the circle is generated with javascript, and submitted to the tool as a job using the submitJob function.</p>
-
-          <!-- Responsive form for inputting circle parameters -->
-          <div class="row">
-            <div class="col-sm-5 col-sm-push-7" style="margin-left: auto; margin-right: auto; text-align: center; ">
-              <img src="img/circle.png"></img>
-            </div>
-            <div class="col-sm-7 col-sm-pull-5">
-              <form class="form-horizontal" id="form-jobs">
-                <div class="form-group">
-                  <label for="job-input-cx" class="col-sm-3 control-label">Center X (Cx)</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-cx" value="5">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-cy" class="col-sm-3 control-label">Center Y (Cy)</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-cy" value="5">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-d" class="col-sm-3 control-label">Diameter (d)</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-d" value="3">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-depth" class="col-sm-3 control-label">Cut Depth</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-depth" value="0.25">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-zpullup" class="col-sm-3 control-label">Z-Pullup</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-zpullup" value="1.0">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-segsize" class="col-sm-3 control-label">Segment Size</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-segsize" value="10">
-                      <span class="input-group-addon">mils</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="job-input-feedrate" class="col-sm-3 control-label">Feedrate</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-feedrate" value="3.0">
-                      <span class="input-group-addon">in/sec</span>
-                    </div>
-                  </div>
-                </div>
-                                <div class="form-group">
-                  <label for="job-input-feedrate" class="col-sm-3 control-label">Pass Depth</label>
-                  <div class="col-sm-9">
-                    <div class="input-group has-success">
-                      <input class="form-control num-input" id="job-input-passdepth" value="0.125">
-                      <span class="input-group-addon">in</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-12 has-success" style="text-align: right;">
-                    <a class="btn btn-success btn-lg" id="job-go">Cut Circle</a>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div> <!-- row -->
           <script src="js/job.js"></script>
         </div> <!-- tab pane -->
 
