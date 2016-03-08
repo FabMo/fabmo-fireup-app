@@ -1,10 +1,45 @@
 
 $("#call-c3").click(function(evt) {
-	fabmo.runSBP('C3,');
+	fabmo.runSBP('C#,3,');
 });
 $("#call-c2").click(function(evt) {
-    fabmo.runSBP('C2,');
+    fabmo.runSBP('C#,2,');
 });
+$("#call-home").click(function(evt) {
+    fabmo.runSBP('MH,');
+});
+$("#call-back").click(function(evt) {
+    fabmo.runSBP('C#,79,');
+});
+$("#call-center").click(function(evt) {
+    fabmo.runSBP('M2,3,4,');
+});
+$("#call-pull-keypad").click(function(evt) {
+  fabmo.showDRO();
+});
+$("#call-set-z-zero").click(function(evt) {
+    fabmo.runSBP('C#,78,');
+});
+$("#call-reset-z-off").click(function(evt) {
+    fabmo.runSBP('C#,77,');
+});
+$("#call-DRO-rollout").click(function(evt) {
+  fabmo.showDRO();
+});
+$("#call-touch-and-go").click(function(evt) {
+  fabmo.launchApp('Touch and Go');
+});
+
+
+
+
+//$("#call-pull-keypad").click(function(evt) {
+//  fabmo.notify('info', 'Heads Up! How extensive can this message be??');
+//});
+
+
+
+
 $("#nav-showdro").click(function(evt) {
   fabmo.showDRO();
 });
@@ -26,4 +61,8 @@ $("#dash-error").click(function(evt) {
 
 $("#dash-launch-job-manager").click(function(evt) {
   fabmo.launchApp('job-manager');
+});
+
+$("#dash-launch-doc").click(function(evt) {
+  fabmo.navigate('http://docs.handibot.com/doc-output/Handibot%202%20MANUAL%20Safe%20Use%20Source_v001.pdf', {target : '_blank'});
 });
