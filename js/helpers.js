@@ -27,7 +27,7 @@ $("#call-DRO-rollout").click(function(evt) {
     fabmo.showDRO();
 });
 $("#call-touch-and-go").click(function(evt) {
-    fabmo.launchApp('Touch and Go');
+    fabmo.launchApp('fabmo-touchandgo');
 });
 
 
