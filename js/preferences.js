@@ -1,11 +1,58 @@
+function validateInput(target) {
+  var f = parseFloat(target.val());
+  if(isNaN(f) || f === undefined) {
+      target.parent().removeClass('has-success');
+      target.parent().addClass('has-error');
+      return null;
+  } else {
+      target.parent().removeClass('has-error');
+      target.parent().addClass('has-success');
+      return f;
+  }
+}
 
+// Get Needed Values
 fabmo.getConfig(function(err, cfg) {
-	$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+	if (cfg.opensbp.variables.current_cutter_Zoffset) 
+    {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+  }
+  if (cfg.opensbp.variables.zero_plate_adder) {
+    $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+  }
+  if (cfg.opensbp.variables.x_backoff) 
+    {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
+  }
+
+  if (cfg.opensbp.variables.y_backoff) {
+    $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+  }  
 });
 
+// Update & SAVE Values as Needed
 $("#pref-save").click(function(evt) {
-	
+	var new_cutter_str = "$current_cutter_Zoffset = " + validateInput($("#pref-input-cur-zlength"));
+  var new_plate_str = "$zero_plate_adder = " + validateInput($("#pref-input-plate-offset"));
+  var new_x_backoff_str = "$x_backoff = " + validateInput($("#pref-input-x-pull"));
+  var new_y_backoff_str = "$y_backoff = " + validateInput($("#pref-input-y-pull"));
+  
+  fabmo.runSBP(new_cutter_str + "\n" + new_plate_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str);
+  //fabmo.runSBP(new_plate_str);
+  //fabmo.runSBP(new_x_backoff_str);
+  //fabmo.runSBP(new_y_backoff_str);
 });
+
+// Or, CANCEL
+$('#pref-cancel a[href="#tab-config"]').tab('show');
+
+//$("#pref-cancel").click(function(evt) {
+  // ... restore starting values
+//  $('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+//  $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+//  $('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
+//  $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+//window.parent.$("#tab-config").tab-pane("select",1);
+//  fabmo.launchApp('bogus');
+//});
 
 /*
 $("#job-go").click(function(evt) {

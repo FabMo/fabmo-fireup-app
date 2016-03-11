@@ -3,8 +3,9 @@
 	"main":"./index.html",
 	"icon":"icon.png",
 	"icon_color":"#9C210C",
-	"version":"0.0.3",
+	"version":"0.0.7",
 	"author":"Ted Hall + Ryan Sturmer",
 	"website":"http://www.handibot.com",
-	"description":"Daily Handibot Start-Up and Info"
+	"description":"Daily Handibot Start-Up and Info",
+	"id":"fabmo-fireup"
 }
