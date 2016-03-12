@@ -42,17 +42,24 @@ $("#pref-save").click(function(evt) {
 });
 
 // Or, CANCEL
-$('#pref-cancel a[href="#tab-config"]').tab('show');
+$("#pref-cancel").click(function(evt) {
+  fabmo.getConfig(function(err, cfg) {
+    if (cfg.opensbp.variables.current_cutter_Zoffset) 
+      {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+    }
+    if (cfg.opensbp.variables.zero_plate_adder) {
+      $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+    }
+    if (cfg.opensbp.variables.x_backoff) 
+      {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
+    }
 
-//$("#pref-cancel").click(function(evt) {
-  // ... restore starting values
-//  $('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
-//  $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
-//  $('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
-//  $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
-//window.parent.$("#tab-config").tab-pane("select",1);
-//  fabmo.launchApp('bogus');
-//});
+    if (cfg.opensbp.variables.y_backoff) {
+      $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+    }  
+  });
+  $('a[href="#tab-startfire"]').tab('show');
+});
 
 /*
 $("#job-go").click(function(evt) {

@@ -26,6 +26,9 @@ $("#call-reset-z-off").click(function(evt) {
 $("#call-DRO-rollout").click(function(evt) {
     fabmo.showDRO();
 });
+$("#call-DRO-hide").click(function(evt) {
+    fabmo.hideDRO();
+});
 $("#call-touch-and-go").click(function(evt) {
     fabmo.launchApp('fabmo-touchandgo');
 });

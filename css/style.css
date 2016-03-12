@@ -6,3 +6,8 @@ body {
 	font-family: monospace;
 	word-wrap: break-word;
 }
+
+.btn{
+	margin-bottom: 10px;
+    margin-left: 10px;
+}

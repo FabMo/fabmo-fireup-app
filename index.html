@@ -27,7 +27,7 @@
         <li class="active"><a href="#tab-startfire" role="tab" data-toggle="tab">Fire-Up!</a></li>
         <li><a href="#tab-details" role="tab" data-toggle="tab">Details</a></li>
         <li><a href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
-        <li><a href="#tab-config" role="tab" data-toggle="tab">Getting HELP</a></li>
+        <li><a id="config-tab-link" href="#tab-config" role="tab" data-toggle="tab">Getting HELP</a></li>
       </ul>
 
       <div class="tab-content">
@@ -45,13 +45,13 @@
             <div>
               <hr width = "90%" noshade>
               <span class="label label-warning"> OTHER USEFUL ACTIONS </span>
-              <h3><a class="btn btn-success" id="call-home"> Move Home </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-back"> Move to PARK Location </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-center"> Move to Center </a> &nbsp;&nbsp; <a class="btn btn-success" id="call-pull-keypad"> Make "Keypad" Visible </a> </h3>
+              <h3><a class="btn btn-success" id="call-home"> Move Home </a><a class="btn btn-success" id="call-back"> Move to PARK Location </a><a class="btn btn-success" id="call-center"> Move to Center </a><a class="btn btn-success" id="call-pull-keypad"> Make "Keypad" Visible </a> </h3>
             </div>  
             <div>
               <hr width = "90%" noshade>
               <span class="label label-warning"> USE AFTER EACH Bit Change </span>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
-                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you, with the tool "touching-off" on the Z-Zeroing plate. Click the button to start the routine. Then, when requested, rotate the plate into position and put the aligator clip on the cutter shank, and click "continue". [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
+                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. Click the button to start the routine. Then, when requested, <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>, and click "continue". [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
             </div>  
             <div>
 
@@ -69,9 +69,9 @@
               <hr width = "90%" noshade>
               <span class="label label-warning"> SPECIALTY FUNCTIONS FOR OCCASIONAL USE </span>
               <h3><a class="btn btn-success" id="call-set-z-zero"> Use Current Z-Zero Location for Measured Length </a> </h3>
-                <p>This is for situations where you have manually zeroed the cutter to your surface (for example, using the keypad to carefully lower the cutter to just touching and using the "0" button). This utility will compute the new "cutter-length-offset" and save it as if you had used the automatic measurement routine.</p>
+                <p>This is for situations where you have manually zeroed the cutter to your surface (for example, using the keypad to carefully lower the cutter to just touching and using the "0" button). This utility will compute the new "cutter-length-offset" and save it as if you had used the automatic measurement routine and work with the "XYZ Zero" routine above (or, Macro#3).</p>
               <h3><a class="btn btn-success" id="call-reset-z-off"> Reset Offset Value for Zeroing Plate Height </a> </h3>
-                <p>You may find it necessary, on occasion, to adjust the value for the distance between the Zeroing plate and the material surface that is used to compute the "cutter-length-offset". This routine will step you through the process.</p>
+                <p>You may find it necessary, on occasion, to adjust the value for the distance between the Zeroing plate and the material surface that is used to compute the "cutter-length-offset". This routine will step you through the process of getting the correct plate height.</p>
 
             </div>  
 
@@ -89,11 +89,13 @@
             	<p>Using the XYZ Zero function in this app is the same thing as clicking on <strong>Macro#3</strong> in the system macros, where the motion instructions are stored. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably.</p> 
 
         		<div class="well" id="cartesian-message">
-                  <p><strong>Your Handibot's Coordinate System</strong>> </p>
-              		<p>Your tool moves around in a Cartesian coordinate system. The X axis (right/left) and the Y axis (back/front) are in the plane of the material. X = 0 and Y = 0 are at the bottom left corner as you face the front of the tool. Moving the tool head to the right is moving in increasing value in the X axis, moving it towards the back is moving it in increasing value the Y axis. Downward movement of the Z axis, the up/down motion of the router, is negative. Zero in the Z is typically set to the height of the surface of the material, though it need not be. To explore the coordinate system, Play with the keypad on in the red, DRO panel on the right:</p>
-					<h3><a class="btn btn-success" id="call-DRO-rollout"> click here if the KEYPAD is not visble </a></h3>
-              		Or even more interesting, try out the "Touch-and-Go App" by clicking here:
-              		<h3><a class="btn btn-success" id="call-touch-and-go"> start: Touch-and-Go </a></h3>
+                  <p><strong>Your Handibot's Coordinate System</strong> </p>
+              		<p>Your tool moves around in a Cartesian coordinate system. The X axis (left/right) and the Y axis (front/back) are in the plane of the material. The X = 0 and Y = 0 locations are at the bottom left corner as you face the front of the tool. Moving the tool-head to the right is moving in increasing value in the X axis, moving it towards the back is moving it in increasing value the Y axis. Up/Down motion of the router is the  Z axis. Down is the negative direction. Zero in the Z is typically set at the height that the cutter tip is just touching the surface of the material (though for special purposes it can be set anywhere). To explore the coordinate system, Play with the keypad on in the red, DRO panel on the right:</p>
+              <button id="call-DRO-rollout" class="btn btn-primary">click here if the KEYPAD is not visble</button>
+              <button id="call-DRO-hide" class="btn btn-primary">or, Hide the KEYPAD</button>
+                  <p></p>
+              		<p>The "Touch-and-Go App" can be very instructive in understanding the coordinate system. It is also helpful in just moving the tool around. Click the button below to try it out:</p>
+              		<h4><a class="btn btn-success" id="call-touch-and-go"> start: Touch-and-Go </a></h4>
             	</div>
 
             <h3>Measuring Bit Length</h3>
@@ -155,10 +157,39 @@
 	                    </div>
 	                  </div>
 	                </div>
+	              <h4>Variables for Setting a Parking Location </h4>
+	              <p>Setting the location for move to a Park location. You might use this at the end of jobs. There is a button for it in the Fire-Up! App. </p>
+	                  <div class="form-group">
+	                  <label for="job-input-xpark" class="col-sm-3 control-label">X Park Location</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="pref-input-x-park" value="3">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label for="job-input-ypark" class="col-sm-3 control-label">Y Park Location</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="pref-input-y-park" value="7">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label for="job-input-zpark" class="col-sm-3 control-label">Z Park Location</label>
+	                  <div class="col-sm-9">
+	                    <div class="input-group has-success">
+	                      <input class="form-control num-input" id="pref-input-z-park" value="1.5">
+	                      <span class="input-group-addon">in</span>
+	                    </div>
+	                  </div>
+	                </div>
 	                
 	                <div class="form-group">
 	                  <div class="col-sm-12 has-success" style="text-align: right;">
-	                    <a class="btn btn-success btn-lg" id="pref-save">SAVE</a>&nbsp;&nbsp;<a class="btn btn-warning btn-lg" id="pref-cancel">CANCEL</a>
+	                    <a class="btn btn-success btn-lg" id="pref-save">SAVE</a>&nbsp;&nbsp;<a href="#tab-details" class="btn btn-warning btn-lg" id="pref-cancel">CANCEL</a>
 	                  </div>
 	                </div>
 	              </form>
@@ -188,7 +219,7 @@
               <em>On a live Fabmo system, system configuration information would appear here.</em>
             </div>
             <script src="js/config.js"></script>
-            <script src="js/dashboard.js"></script>
+            <script src="js/helpers.js"></script>
         </div>
       </div> <!-- tab content -->
     </div><!-- container -->
