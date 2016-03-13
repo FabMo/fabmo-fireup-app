@@ -11,7 +11,7 @@ function validateInput(target) {
   }
 }
 
-// Get Needed Values
+// Get Needed Values ... initial read in
 fabmo.getConfig(function(err, cfg) {
 	if (cfg.opensbp.variables.current_cutter_Zoffset) 
     {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
@@ -22,9 +22,17 @@ fabmo.getConfig(function(err, cfg) {
   if (cfg.opensbp.variables.x_backoff) 
     {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
   }
-
   if (cfg.opensbp.variables.y_backoff) {
     $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+  }  
+  if (cfg.opensbp.variables.x_park) {
+    $('#pref-x-park').val(cfg.opensbp.variables.x_park);
+  }  
+  if (cfg.opensbp.variables.y_park) {
+    $('#pref-y-park').val(cfg.opensbp.variables.y_park);
+  }  
+  if (cfg.opensbp.variables.z_park) {
+    $('#pref-z-park').val(cfg.opensbp.variables.z_park);
   }  
 });
 
@@ -34,11 +42,11 @@ $("#pref-save").click(function(evt) {
   var new_plate_str = "$zero_plate_adder = " + validateInput($("#pref-input-plate-offset"));
   var new_x_backoff_str = "$x_backoff = " + validateInput($("#pref-input-x-pull"));
   var new_y_backoff_str = "$y_backoff = " + validateInput($("#pref-input-y-pull"));
+  var new_x_park_str = "$x_park = " + validateInput($("#pref-input-x-park"));
+  var new_y_park_str = "$y_park = " + validateInput($("#pref-input-y-park"));
+  var new_z_park_str = "$z_park = " + validateInput($("#pref-input-z-park"));
   
-  fabmo.runSBP(new_cutter_str + "\n" + new_plate_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str);
-  //fabmo.runSBP(new_plate_str);
-  //fabmo.runSBP(new_x_backoff_str);
-  //fabmo.runSBP(new_y_backoff_str);
+  fabmo.runSBP(new_cutter_str + "\n" + new_plate_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str + "\n" + new_x_park_str  + "\n" + new_y_park_str  + "\n" + new_z_park_str);
 });
 
 // Or, CANCEL
@@ -53,9 +61,17 @@ $("#pref-cancel").click(function(evt) {
     if (cfg.opensbp.variables.x_backoff) 
       {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
     }
-
     if (cfg.opensbp.variables.y_backoff) {
       $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+    }  
+    if (cfg.opensbp.variables.x_park) {
+      $('#pref-x-park').val(cfg.opensbp.variables.x_park);
+    }  
+    if (cfg.opensbp.variables.y_park) {
+      $('#pref-y-park').val(cfg.opensbp.variables.y_park);
+    }  
+    if (cfg.opensbp.variables.z_park) {
+      $('#pref-z-park').val(cfg.opensbp.variables.z_park);
     }  
   });
   $('a[href="#tab-startfire"]').tab('show');
