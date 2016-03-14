@@ -39,8 +39,8 @@
             <div>
             <hr width = "90%" noshade>
               <span class="label label-info"> USE ALMOST ALWAYS at StartUp</span>
-              <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ ZERO </a> Setting the Zero Location for X, Y, and Z Axes</h3>
-                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the 0 location for each axis. Just click this green button.</p>
+              <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ HOME </a> Setting the Home Location for X, Y, and Z Axes</h3>
+                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero (0.000) location for each axis.</p>
             </div>
             <div>
               <hr width = "90%" noshade>
@@ -51,7 +51,7 @@
               <hr width = "90%" noshade>
               <span class="label label-warning"> USE AFTER EACH Bit Change </span>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
-                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. Click the button to start the routine. Then, when requested, <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>, and click "continue". [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
+                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. First the tool will move in X and Y to check its location. Then, when requested, <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>, and click "continue". [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
             </div>  
             <div>
 
@@ -82,11 +82,11 @@
         <!-- Details Pane -->
         <div class="tab-pane" id="tab-details">
             <h2>Detailed Info on this FireUp! App</h2>
-            <p>This App contains a variety of "helper" functions and information for setting-up and using your Handibot. It's designed to help you learn about your tool and its operation. Most functions have short-cuts or more direct methods for putting them to use rather than using this App. After you become knowledgeable and comfortable in the use of your tool, you may find you don't use the App itself anymore. Feel free to delete it (you can alwasy get it back from the Handibot website)</p>
-            <h3>Setting the XYZ Zero Locations</h3>
-            	<p>The Zeroing of an axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set.</p>
+            <p>This App contains a variety of "helper" functions and information for setting-up and using your Handibot. It's designed to help you learn about your tool and its operation. Most functions have short-cuts or more direct methods for putting them to use rather than using this App. After you become knowledgeable and comfortable in the use of your tool, you may find you don't use the App itself anymore. Feel free to delete it (you can always get it back from the Handibot website)</p>
+            <h3>Setting the XYZ Home Locations</h3>
+            	<p>Determining the zero location of each axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set, defining your Home Location.</p>
             	<p>The back-off distance is determined at the factory and saved as a persistant variable. As you get more experienced, you may want to change the back-off distance in order to move your zero locations to better suit your work, for a particular project, or just to make a slight adjustment of your zero location. You can modify the back-off distance for each axis in the <code>Preferences</code> tab (above).</p>
-            	<p>Using the XYZ Zero function in this app is the same thing as clicking on <strong>Macro#3</strong> in the system macros, where the motion instructions are stored. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably.</p> 
+            	<p>Using the Set Home function in this app is the same thing as clicking on <strong>Macro#3</strong> in the system macros, where the motion instructions are actually stored. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably.</p> 
 
         		<div class="well" id="cartesian-message">
                   <p><strong>Your Handibot's Coordinate System</strong> </p>
@@ -99,7 +99,7 @@
             	</div>
 
             <h3>Measuring Bit Length</h3>
-            	<p>Measuring Bit Length is sometimes called Z-Zeoring, because we are really determing the zero location for the tip of the cutter in the Z axis. More importantly for a Handibot, we are determining the back-off distance from the top Z-axis stop to having the tip of the cutter exactly at the material (at Zero). Your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance that we call, "current_cutter_Zoffset". So it is not really a measurement of the actual length of the bit, but the determination of an offset distance that is based on the exposed length of the cutter.</p>
+            	<p>Measuring Bit Length is sometimes called Z-Zeoring, because we are really determing the zero location for the tip of the cutter in the Z axis. More importantly for a Handibot, we are determining the back-off distance from the top Z-axis, stop to having the tip of the cutter exactly at the material (at Zero). Your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance that we call, "current_cutter_Zoffset". So it is not really a measurement of the actual length of the bit, but the determination of an offset distance that is based on the exposed length of the cutter.</p>
             	<p>You will also see the "current_cutter_Zoffset" in the <code>Preferences</code> tab (above).</p>
 
           <script src="js/actions.js"></script>
@@ -117,8 +117,8 @@
 	        <div class="row">
 	             <div class="col-sm-7" style="margin-left: auto; margin-right: auto; text-align: left; ">
 	              <form class="form-horizontal" id="form-jobs">
-	              <h4>Variables for Setting X and Y Zero Location </h4>
-	              <p>These variables are used during zeroing to set the location for X and Y zero. </p>
+	              <h4>Variables for Setting X and Y Home Location </h4>
+	              <p>These variables are used to set the Home location for X and Y zero. </p>
 	                <div class="form-group">
 	                  <label for="pref-input-xpullback" class="col-sm-3 control-label">X Pull-back</label>
 	                  <div class="col-sm-9">
