@@ -11,30 +11,30 @@ function validateInput(target) {
   }
 }
 
-// Get Needed Values ... initial read in
-fabmo.getConfig(function(err, cfg) {
-	if (cfg.opensbp.variables.current_cutter_Zoffset) 
-    {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
-  }
-  if (cfg.opensbp.variables.zero_plate_adder) {
-    $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
-  }
-  if (cfg.opensbp.variables.x_backoff) 
-    {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
-  }
-  if (cfg.opensbp.variables.y_backoff) {
-    $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
-  }  
-  if (cfg.opensbp.variables.x_park) {
-    $('#pref-x-park').val(cfg.opensbp.variables.x_park);
-  }  
-  if (cfg.opensbp.variables.y_park) {
-    $('#pref-y-park').val(cfg.opensbp.variables.y_park);
-  }  
-  if (cfg.opensbp.variables.z_park) {
-    $('#pref-z-park').val(cfg.opensbp.variables.z_park);
-  }  
-});
+// // Get Needed Values ... initial read in
+// fabmo.getConfig(function(err, cfg) {
+// 	if (cfg.opensbp.variables.current_cutter_Zoffset) 
+//     {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+//   }
+//   if (cfg.opensbp.variables.zero_plate_adder) {
+//     $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+//   }
+//   if (cfg.opensbp.variables.x_backoff) 
+//     {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
+//   }
+//   if (cfg.opensbp.variables.y_backoff) {
+//     $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+//   }  
+//   if (cfg.opensbp.variables.x_park) {
+//     $('#pref-x-park').val(cfg.opensbp.variables.x_park);
+//   }  
+//   if (cfg.opensbp.variables.y_park) {
+//     $('#pref-y-park').val(cfg.opensbp.variables.y_park);
+//   }  
+//   if (cfg.opensbp.variables.z_park) {
+//     $('#pref-z-park').val(cfg.opensbp.variables.z_park);
+//   }  
+// });
 
 // Update & SAVE Values as Needed
 $("#pref-save").click(function(evt) {
@@ -48,7 +48,6 @@ $("#pref-save").click(function(evt) {
   
   fabmo.runSBP(new_cutter_str + "\n" + new_plate_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str + "\n" + new_x_park_str  + "\n" + new_y_park_str  + "\n" + new_z_park_str);
 });
-
 // Or, CANCEL
 $("#pref-cancel").click(function(evt) {
   fabmo.getConfig(function(err, cfg) {
@@ -75,6 +74,33 @@ $("#pref-cancel").click(function(evt) {
     }  
   });
   $('a[href="#tab-startfire"]').tab('show');
+});
+
+// Make Sure Values that could have changed are updated
+$("#preference-tab-link").click(function(evt) {
+  fabmo.getConfig(function(err, cfg) {
+    if (cfg.opensbp.variables.current_cutter_Zoffset) 
+      {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
+    }
+    if (cfg.opensbp.variables.zero_plate_adder) {
+      $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+    }
+    if (cfg.opensbp.variables.x_backoff) 
+      {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
+    }
+    if (cfg.opensbp.variables.y_backoff) {
+      $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+    }  
+    if (cfg.opensbp.variables.x_park) {
+      $('#pref-x-park').val(cfg.opensbp.variables.x_park);
+    }  
+    if (cfg.opensbp.variables.y_park) {
+      $('#pref-y-park').val(cfg.opensbp.variables.y_park);
+    }  
+    if (cfg.opensbp.variables.z_park) {
+      $('#pref-z-park').val(cfg.opensbp.variables.z_park);
+    }  
+  });
 });
 
 /*

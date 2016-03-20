@@ -3,7 +3,7 @@
   "main": "./index.html",
   "icon": "icon.png",
   "icon_color": "#9C210C",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "author": "Ted Hall + Ryan Sturmer",
   "website": "http://www.handibot.com",
   "description": "Daily Handibot Start-Up and Info",
