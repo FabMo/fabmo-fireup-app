@@ -34,13 +34,20 @@
         <!-- Fire-Up!/start pane -->
         <div class="tab-pane active" id="tab-startfire">
             <h2><strong>Fire-Up!</strong></h2>
-            <p>Here are a few things you will usually need to do when you Fire-Up your Handibot to start work. Just 'CLICK' the green buttons as needed ...</p>
+            <p class="long">Here are a few things you will usually need to do when you Fire-Up your Handibot to start work. Just 'CLICK' the green buttons as needed ...</p>
+
+              <form id="doclength">
+                <label for="long">Full Explanations</label>
+                <input type="radio" name="doclength" id="long" value="long" checked="checked">
+                <label for="short">Short (Expert) Version</label>
+                <input type="radio" name="doclength" id="short" value="short">
+              </form>
             
             <div>
             <hr width = "90%" noshade>
               <span class="label label-info"> USE ALMOST ALWAYS at StartUp</span>
                 <p> </p>
-                <p>After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis.</p>
+                <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis.</p>
               <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ HOME </a> Setting the Home Location for X, Y, and Z Axes</h3>
             </div>
             <div>
@@ -52,12 +59,12 @@
               <hr width = "90%" noshade>
               <span class="label label-warning"> USE AFTER EACH Bit Change </span>
                 <p> </p>
-                <p>If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. First the tool will move in X and Y to check its location. After that, you will be asked to <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>. Click "continue" after you are ready. [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
+                <p class="long">If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. First the tool will move in X and Y to check its location. After that, you will be asked to <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>. Click "continue" after you are ready. [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
               <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> Measuring Bit Length</h3>
             </div>  
             <div>
 
-              <div class="pure-g">
+              <div  class="long" class="pure-g">
                 <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 image-container">
                   <div class="image-wrapper">
                     <img class='pure-img' id="rotate-plate" src="img/clip-swing.png">
@@ -71,7 +78,7 @@
               <hr width = "90%" noshade>
               <span class="label label-warning"> SPECIALTY FUNCTIONS FOR OCCASIONAL USE </span>
                 <p> </p>
-                <p>Sometimes you will want to manually set the Z-zeroing location rather than use the measuring function above (to create the Z setting that will be restored whenever the XYZ Home routine is used). First make sure your XYZ locations are accurate by running the XYZ Home routine (or Macro#3). Then move the Z to <strong> where you want the NEW ZERO</strong> to be (don't use the local zeroing button). Click below ...</p>
+                <p class="long">Sometimes you will want to manually set the Z-zeroing location rather than use the measuring function above (to create the Z setting that will be restored whenever the XYZ Home routine is used). First make sure your XYZ locations are accurate by running the XYZ Home routine (or Macro#3). Then move the Z to <strong> where you want the NEW ZERO</strong> to be (don't use the local zeroing button). Click below ...</p>
               <h3><a class="btn btn-success" id="call-set-z-zero"> Use Current Z-Location for Z-Zero </a> </h3>
                 <p> </p>
                 <p> </p>
@@ -233,6 +240,14 @@
               return false;
             }
           });
+          $('#doclength').change(function(){
+            var that = $('input[name="doclength"]:checked').val();
+            if (that === "long"){
+              $('.long').slideDown();
+            } else if (that === "short"){
+              $('.long').slideUp();
+            }
+          })
         });
     </script>
   </body>
