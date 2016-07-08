@@ -103,6 +103,7 @@ $("#preference-tab-link").click(function(evt) {
   });
 });
 
+
 /*
 $("#job-go").click(function(evt) {
     var cx = validateInput($("#job-input-cx"));

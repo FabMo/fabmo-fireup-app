@@ -1,3 +1,15 @@
+var that;
+
+function updateConsolidation() {
+//    that = doclength;
+       if (that === "long"){
+         $('.long').slideDown();
+         localStorage.setItem("doclength", "long");
+       } else if (that === "short"){
+         $('.long').slideUp();
+         localStorage.setItem("doclength", "short");
+       }
+}
 
 $("#call-c3").click(function(evt) {
 	  fabmo.runSBP('C#,3');
