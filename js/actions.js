@@ -2,12 +2,13 @@ var that;
 
 function updateConsolidation() {
 //    that = doclength;
+
        if (that === "long"){
          $('.long').slideDown();
-         localStorage.setItem("doclength", "long");
+         fabmo.setAppConfig({"doclength":"long"});
        } else if (that === "short"){
          $('.long').slideUp();
-         localStorage.setItem("doclength", "short");
+         fabmo.setAppConfig({"doclength":"short"});
        }
 }
 
