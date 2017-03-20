@@ -23,7 +23,6 @@ function validateInput(target) {
       return f;
   }
 }
-
 // When the go button is pressed, validate the inputs and move the tool (if valid)
 $("#nav-go").click(function(evt) {
   var x = validateInput($("#ctrl-xinput"));
@@ -44,12 +43,10 @@ $(".num-input").change(function(evt) {
 });
 
 // Update the position display every time a status report is recieved
-var curUnits;
 fabmo.on('status', function(status) {
   $('#ctrl-xdisplay').val(status.posx);
   $('#ctrl-ydisplay').val(status.posy);
   $('#ctrl-zdisplay').val(status.posz);
-  curUnits = cfg.opensbp.units;
 });
 
 fabmo.requestStatus();
