@@ -25,7 +25,11 @@ $("#call-back").click(function(evt) {
     fabmo.runSBP('C#,79');
 });
 $("#call-center").click(function(evt) {
-    fabmo.runSBP('M2,3,4');
+    if (curUnit ==="mm") {
+      fabmo.runSBP('M2,75,100');
+    } else {
+      fabmo.runSBP('M2,3,4');
+    }
 });
 $("#call-pull-keypad").click(function(evt) {
     fabmo.showDRO();

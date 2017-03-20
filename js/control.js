@@ -44,10 +44,12 @@ $(".num-input").change(function(evt) {
 });
 
 // Update the position display every time a status report is recieved
+var curUnits;
 fabmo.on('status', function(status) {
   $('#ctrl-xdisplay').val(status.posx);
   $('#ctrl-ydisplay').val(status.posy);
   $('#ctrl-zdisplay').val(status.posz);
+  curUnits = cfg.opensbp.units;
 });
 
 fabmo.requestStatus();
