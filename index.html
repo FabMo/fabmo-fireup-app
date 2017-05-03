@@ -20,19 +20,19 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#tab-startfire" role="tab" data-toggle="tab">Fire-Up!</a></li>
-        <li><a href="#tab-details" role="tab" data-toggle="tab">Details</a></li>
-        <li><a id="preference-tab-link" href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
-        <li><a id="config-tab-link" href="#tab-config" role="tab" data-toggle="tab">Getting HELP</a></li>
+        <li><a class="long" href="#tab-details" role="tab" data-toggle="tab">Detail</a></li>
+        <li><a class="long" id="preference-tab-link" href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
+        <li><a class="long" id="config-tab-link" href="#tab-config" role="tab" data-toggle="tab">HELP</a></li>
       </ul>
 
       <div class="tab-content">
         <!-- Fire-Up!/start pane -->
         <div class="tab-pane active" id="tab-startfire">
-            <h2><strong>Fire-Up!</strong></h2>
+            <h2 class="long"><strong>Fire-Up!</strong></h2>
             <p class="long">Here are a few things you will usually need to do when you Fire-Up your Handibot to start work. Just 'CLICK' the green bars as needed ...</p>
 
               <form id="doclength">
-                <label for="long">Full Explanations</label>
+                <label for="long">With Full Explanations</label>
                 <input type="radio" name="doclength" id="long" value="long" checked="checked">
                 <label> ... </label>
                 <label for="short">Short (Expert) Version</label>
@@ -40,23 +40,23 @@
               </form>
             
             <div>
-            <hr width = "90%" noshade>
-              <span class="label label-info"> USE ALMOST ALWAYS at StartUp</span>
-                <p> </p>
+            <hr class="long" width = "90%" noshade>
+              <span class="label label-info"> USE at StartUp</span>
+                <p class="long"> </p>
                 <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis.</p>
-              <h3><a class="btn btn-success btn-lg" id="call-c3"> SET MY XYZ HOME </a> <span class="long"> Setting the Home Location for X, Y, and Z Axes</span></h3>
+              <h3><a class="btn btn-success btn-lg" id="call-c3"> RESET MY XYZ HOME (0,0,0) </a> <span class="long"> Setting the Home Location for X, Y, and Z Axes</span></h3>
             </div>
             <div>
-              <hr width = "90%" noshade>
+              <hr class="long" width = "90%" noshade>
               <span class="label label-warning"> OTHER USEFUL ACTIONS </span>
               <h3><a class="btn btn-success" id="call-home"> Move Home </a><a class="btn btn-success" id="call-back"> Move to PARK Location </a><a class="btn btn-success" id="call-center"> Move to Center </a><a class="btn btn-success" id="call-pull-keypad"> Make "Keypad" Visible </a> </h3>
             </div>  
             <div>
-              <hr width = "90%" noshade>
-              <span class="label label-warning"> USE AFTER EACH Bit Change </span>
-                <p> </p>
+              <hr class="long" width = "90%" noshade>
+              <span class="label label-warning"> USE AFTER a Bit Change </span>
+                <p class="long"> </p>
                 <p class="long">If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. First the tool will move in X and Y to check its location. After that, you will be asked to <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>. Click "continue" after you are ready. [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
-              <h3><a class="btn btn-success btn-lg" id="call-c2"> MEASURE CUTTER </a> <span class="long">Measuring Bit Length </span></h3>
+              <h3><a class="btn btn-success btn-lg" id="call-c2"> RE-MEASURE Z-ZERO </a> <span class="long">Measuring Bit Length </span></h3>
             </div>  
             <div>
 
@@ -70,10 +70,10 @@
                 </div>
               </div>  
 
-              <hr width = "90%" noshade>
+              <hr class="long" width = "90%" noshade>
               <hr width = "90%" noshade>
               <span class="label label-warning"> SPECIALTY FUNCTIONS FOR OCCASIONAL USE </span>
-                <p> </p>
+                <p class="long"> </p>
                 <p class="long">Sometimes you will want to manually set the Z-zeroing location rather than use the measuring function above (to create the Z setting that will be restored whenever the XYZ Home routine is used). First make sure your XYZ locations are accurate by running the XYZ Home routine (or Macro#3). Then move the Z to <strong> where you want the NEW ZERO</strong> to be (don't use the local zeroing button). Click below ...</p>
               <h3><a class="btn btn-success" id="call-set-z-zero"> Use Current Z-Location for Z-Zero </a> </h3>
                 <p> </p>

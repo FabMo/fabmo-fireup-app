@@ -23,7 +23,6 @@ function validateInput(target) {
       return f;
   }
 }
-
 // When the go button is pressed, validate the inputs and move the tool (if valid)
 $("#nav-go").click(function(evt) {
   var x = validateInput($("#ctrl-xinput"));
