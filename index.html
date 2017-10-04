@@ -120,28 +120,37 @@
 	        <div class="row">
 	             <div class="col-sm-7" style="margin-left: auto; margin-right: auto; text-align: left; ">
 	              <form class="form-horizontal" id="form-jobs">
-	              <h4>Variables for Setting X and Y Home Location </h4>
-	              <p>These variables are used to set the Home location for X and Y zero. </p>
+	              <h4>Variables for Setting X, Y and Z Zeroing Back-Off Distances </h4>
+	              <p>These variables are used to set the distance for backoff from proximity switches or end stops. </p>
 	                <div class="form-group">
-	                  <label for="pref-input-xpullback" class="col-sm-3 control-label">X Pull-back</label>
+	                  <label for="pref-input-xpullback" class="col-sm-3 control-label">x_backoff</label>
 	                  <div class="col-sm-9">
 	                    <div class="input-group has-success">
-	                      <input class="form-control num-input" id="pref-input-x-pull" value=".10">
+	                      <input class="form-control num-input" id="pref-input-x-pull" value=".075">
 	                      <span class="input-group-addon">in</span>
 	                    </div>
 	                  </div>
 	                </div>
 	                <div class="form-group">
-	                  <label for="pref-input-ypullback" class="col-sm-3 control-label">Y Pull-back</label>
+	                  <label for="pref-input-ypullback" class="col-sm-3 control-label">y_backoff</label>
 	                  <div class="col-sm-9">
 	                    <div class="input-group has-success">
-	                      <input class="form-control num-input" id="pref-input-y-pull" value=".10">
+	                      <input class="form-control num-input" id="pref-input-y-pull" value=".075">
 	                      <span class="input-group-addon">in</span>
 	                    </div>
 	                  </div>
 	                </div>
-	              <h4>Variables for Setting ZZero Location </h4>
-	              <p>These variables are used during zeroing to set the location for Z zero. </p>
+                  <div class="form-group">
+                    <label for="pref-input-ypullback" class="col-sm-3 control-label">z_backoff</label>
+                    <div class="col-sm-9">
+                      <div class="input-group has-success">
+                        <input class="form-control num-input" id="pref-input-z-pull" value=".075">
+                        <span class="input-group-addon">in</span>
+                      </div>
+                    </div>
+                  </div>
+	              <h4>Variables for Setting Z-Zero </h4>
+	              <p>Variable used to set Z-Zero Offset by cutter length (Macro 2 or C2). </p>
 	                  <div class="form-group">
 	                  <label for="job-input-zlength" class="col-sm-3 control-label">Cutter Length</label>
 	                  <div class="col-sm-9">
@@ -151,8 +160,9 @@
 	                    </div>
 	                  </div>
 	                </div>
+                <p>Variable used to set Z-Zero Plate Thickness/Height (Macro 2 or C2; and Macro 77). </p>
 	                <div class="form-group">
-	                  <label for="job-input-zto-surf" class="col-sm-3 control-label">Zero Plate Height</label>
+	                  <label for="job-input-zto-surf" class="col-sm-3 control-label">Zero Plate Thickness</label>
 	                  <div class="col-sm-9">
 	                    <div class="input-group has-success">
 	                      <input class="form-control num-input" id="pref-input-plate-offset" value=".75">

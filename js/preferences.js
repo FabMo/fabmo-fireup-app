@@ -39,29 +39,34 @@ function validateInput(target) {
 // Update & SAVE Values as Needed
 $("#pref-save").click(function(evt) {
 	var new_cutter_str = "$current_cutter_Zoffset = " + validateInput($("#pref-input-cur-zlength"));
-  var new_plate_str = "$zero_plate_adder = " + validateInput($("#pref-input-plate-offset"));
+  var new_z_plate_thickness_str = "$ZZeroPlateThickness = " + validateInput($("#pref-input-plate-offset"));
   var new_x_backoff_str = "$x_backoff = " + validateInput($("#pref-input-x-pull"));
   var new_y_backoff_str = "$y_backoff = " + validateInput($("#pref-input-y-pull"));
+  var new_z_backoff_str = "$z_backoff = " + validateInput($("#pref-input-z-pull"));
   var new_x_park_str = "$x_park = " + validateInput($("#pref-input-x-park"));
   var new_y_park_str = "$y_park = " + validateInput($("#pref-input-y-park"));
   var new_z_park_str = "$z_park = " + validateInput($("#pref-input-z-park"));
   
-  fabmo.runSBP(new_cutter_str + "\n" + new_plate_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str + "\n" + new_x_park_str  + "\n" + new_y_park_str  + "\n" + new_z_park_str);
+  fabmo.runSBP(new_cutter_str + "\n" + new_z_plate_thickness_str + "\n" + new_x_backoff_str + "\n" + new_y_backoff_str + "\n" + new_z_backoff_str + "\n" + new_x_park_str  + "\n" + new_y_park_str  + "\n" + new_z_park_str);
 });
+
 // Or, CANCEL
 $("#pref-cancel").click(function(evt) {
   fabmo.getConfig(function(err, cfg) {
     if (cfg.opensbp.variables.current_cutter_Zoffset) 
       {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
     }
-    if (cfg.opensbp.variables.zero_plate_adder) {
-      $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+    if (cfg.opensbp.variables.ZZeroPlateThickness) {
+      $('#pref-input-plate-offset').val(cfg.opensbp.variables.ZZeroPlateThickness);
     }
     if (cfg.opensbp.variables.x_backoff) 
       {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
     }
     if (cfg.opensbp.variables.y_backoff) {
       $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+    }  
+    if (cfg.opensbp.variables.z_backoff) {
+      $('#pref-input-z-pull').val(cfg.opensbp.variables.z_backoff);
     }  
     if (cfg.opensbp.variables.x_park) {
       $('#pref-x-park').val(cfg.opensbp.variables.x_park);
@@ -82,14 +87,17 @@ $("#preference-tab-link").click(function(evt) {
     if (cfg.opensbp.variables.current_cutter_Zoffset) 
       {$('#pref-input-cur-zlength').val(cfg.opensbp.variables.current_cutter_Zoffset);
     }
-    if (cfg.opensbp.variables.zero_plate_adder) {
-      $('#pref-input-plate-offset').val(cfg.opensbp.variables.zero_plate_adder);
+    if (cfg.opensbp.variables.ZZeroPlateThickness) {
+      $('#pref-input-plate-offset').val(cfg.opensbp.variables.ZZeroPlateThickness);
     }
     if (cfg.opensbp.variables.x_backoff) 
       {$('#pref-input-x-pull').val(cfg.opensbp.variables.x_backoff);
     }
     if (cfg.opensbp.variables.y_backoff) {
       $('#pref-input-y-pull').val(cfg.opensbp.variables.y_backoff);
+    }  
+    if (cfg.opensbp.variables.z_backoff) {
+      $('#pref-input-z-pull').val(cfg.opensbp.variables.z_backoff);
     }  
     if (cfg.opensbp.variables.x_park) {
       $('#pref-x-park').val(cfg.opensbp.variables.x_park);
