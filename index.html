@@ -29,7 +29,7 @@
         <!-- Fire-Up!/start pane -->
         <div class="tab-pane active" id="tab-startfire">
             <h2 class="long"><strong>Fire-Up!</strong></h2>
-            <p class="long">Here are a few things you will usually want to do when you Fire-Up to start work. Just 'CLICK' the green bars as needed. You can use the <strong>Short From</strong>, below, for a simplified view. And, you can use the Apps tab in the <strong>Configuration Manager</strong> (left pane) to make this your Default Startup view.</p>
+            <p class="long">Here are a few things you will usually want to do when you Fire-Up to start work. Just CLICK the green bars as needed. You can use the <strong>Short Form</strong> option, below, for a simplified view. And, you can use the Apps tab in the <strong>Configuration Manager</strong> (left pane) to make this your Default Startup view.</p>
 
               <form id="doclength">
                 <label for="long">Full</label>
@@ -40,22 +40,22 @@
               </form>
             
             <div>
-              <span class="label label-info"> USE at StartUp</span>
+              <span class="label label-warning"> USE at StartUp</span>
                 <p class="long"> </p>
-                <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis. Most of the instructions on this page are also available as individual functions in the <strong>Macros</strong> folder (see left pane).</p>
+                <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis. Most of the instructions on this page are also available as individual functions in the <strong>Macros</strong> folder (left pane).</p>
               <h3><a class="btn btn-success btn-lg" id="call-c3"> HOME TOOL </a> <span class="long"> Automatically Set the Home Location for X, Y, and Z Axes</span></h3>
             </div>
             <div>
               <hr class="long" width = "90%" noshade>
-              <span class="label label-warning"> OTHER USEFUL ACTIONS </span>
+              <span class="label label-warning"> OTHER helpful Actions </span>
               <h3><a class="btn btn-success" id="call-home"> Move Home </a><a class="btn btn-success" id="call-back"> Move to PARK Location </a><a class="btn btn-success" id="call-center"> Move to Center </a><a class="btn btn-success" id="call-pull-keypad"> Make "Keypad" Visible </a> </h3>
             </div>  
             <div>
               <hr class="long" width = "90%" noshade>
-              <span class="label label-warning"> USE AFTER a Bit Change </span>
+              <span class="label label-warning"> USE after a Bit Change </span>
                 <p class="long"> </p>
-                <p class="long">If you have changed your cutter, you will need to re-measure its length. Measuring the cutter is done for you by having the tool "touch-off" on the Z-Zeroing plate. First the tool will move in X and Y to check its location. After that, you will be asked to <strong>rotate the plate into position and put the aligator clip on the cutter shank</strong>. Click "continue" after you are ready. [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
-              <h3><a class="btn btn-success btn-lg" id="call-c2"> RE-MEASURE Z-ZERO </a> <span class="long">Measuring Bit Length </span></h3>
+                <p class="long">If you have changed your cutter, you will need to re-set the Z-Zero location. This is done automatically for you by having the tool "touch-off" a Z-Zeroing plate. You will be asked to <strong> put the plate into position under the Z and to put the aligator clip on the cutter shank</strong>. Click "continue" after you are ready. [NOTE: Clip to the cutter-shank and not the collet-nut; the collet-nut does not provide a reliable electrical connection.]</p>
+              <h3><a class="btn btn-success btn-lg" id="call-c2"> Z-ZERO </a> <span class="long"> Setting the Zero Location for the Cutter </span></h3>
             </div>  
             <div>
 
@@ -71,9 +71,9 @@
 
               <hr class="long" width = "90%" noshade>
               <hr width = "90%" noshade>
-              <span class="label label-warning"> SPECIALTY FUNCTIONS FOR OCCASIONAL USE </span>
+              <span class="label label-warning"> SPECIALTY FUNCTIONS for Specific Need </span>
                 <p class="long"> </p>
-                <p class="long">Sometimes you will want to manually set the Z-zeroing location rather than use the measuring function above (to create the Z setting that will be restored whenever the XYZ Home routine is used). First make sure your XYZ locations are accurate by running the XYZ Home routine (or Macro#3). Then move the Z to <strong> where you want the NEW ZERO</strong> to be (don't use the local zeroing button). Click below ...</p>
+                <p class="long">Sometimes you will need to manually set the Z-zero location based on the current value rather than use automatic Z-Zero function. For example if you want to manually determine the correct 0 for the Z. First make sure your XYZ locations are initially accurate by running the Home Tool routine (or Macro#3). Then set the 0 for the Z where you would like it to be using the 0 button in the red panel (right panel). Click below ...</p>
               <h3><a class="btn btn-success" id="call-set-z-zero"> Use Current Z-Location for Z-Zero </a> </h3>
                 <p> </p>
                 <p> </p>
@@ -104,7 +104,7 @@
             	</div>
 
             <h3>Z-Zero</h3>
-            	<p>Z-Zero is the short name for setting the zero location for the cutter. We are actually determining the cutter length and setting the 0 location for the tip in order to set the working location for the tip of the cutter in the Z axis. Using the Z-Zero functionality, your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the top stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance from the top that we call, "current_cutter_Zoffset".</p>
+            	<p>Z-Zero is the short name for setting the zero location for the cutter. We are actually determining the cutter length and setting the 0 location for the tip in order to set the working location for the tip of the cutter in the Z axis. Using the Z-Zero functionality, your tool uses electrical contact with a Z-zero plate to tell exactly the distance of tip of the cutter from the top stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance from the top. We call this total distance, "current_cutter_Zoffset".</p>
             	<p>You will also see the "current_cutter_Zoffset" in the <code>Preferences</code> tab (above).</p>
 
         </div><!-- details pane -->
