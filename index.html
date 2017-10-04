@@ -21,15 +21,15 @@
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#tab-startfire" role="tab" data-toggle="tab">Fire-Up!</a></li>
         <li><a class="long" href="#tab-details" role="tab" data-toggle="tab">Detail</a></li>
-        <li><a class="long" id="preference-tab-link" href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
-        <li><a class="long" id="config-tab-link" href="#tab-config" role="tab" data-toggle="tab">HELP</a></li>
+        <li><a id="preference-tab-link" href="#tab-preferences" role="tab" data-toggle="tab">Preferences</a></li>
+        <li><a id="config-tab-link" href="#tab-config" role="tab" data-toggle="tab">HELP</a></li>
       </ul>
 
       <div class="tab-content">
         <!-- Fire-Up!/start pane -->
         <div class="tab-pane active" id="tab-startfire">
             <h2 class="long"><strong>Fire-Up!</strong></h2>
-            <p class="long">Here are a few things you will usually need to do when you Fire-Up your Handibot to start work. Just 'CLICK' the green bars as needed ...</p>
+            <p class="long">Here are a few things you will usually want to do when you Fire-Up to start work. Just 'CLICK' the green bars as needed. You can use the <strong>Short From</strong>, below, for a simplified view. And, you can use the Apps tab in the <strong>Configuration Manager</strong> (left pane) to make this your Default Startup view.</p>
 
               <form id="doclength">
                 <label for="long">Full</label>
@@ -40,11 +40,10 @@
               </form>
             
             <div>
-            <hr class="long" width = "90%" noshade>
               <span class="label label-info"> USE at StartUp</span>
                 <p class="long"> </p>
-                <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis.</p>
-              <h3><a class="btn btn-success btn-lg" id="call-c3"> RESET MY XYZ HOME (0,0,0) </a> <span class="long"> Setting the Home Location for X, Y, and Z Axes</span></h3>
+                <p class="long">After you turn on your Handibot, the first thing you will typically want to do is to accurately set the home or zero location for each axis. Most of the instructions on this page are also available as individual functions in the <strong>Macros</strong> folder (see left pane).</p>
+              <h3><a class="btn btn-success btn-lg" id="call-c3"> HOME TOOL </a> <span class="long"> Automatically Set the Home Location for X, Y, and Z Axes</span></h3>
             </div>
             <div>
               <hr class="long" width = "90%" noshade>
@@ -88,15 +87,15 @@
         <!-- Details Pane -->
         <div class="tab-pane" id="tab-details">
             <h2>Detailed Info on this FireUp! App</h2>
-            <p>This App contains a variety of "helper" functions and information for setting-up and using your Handibot. It's designed to help you learn about your tool and its operation. Most functions have short-cuts or more direct methods for putting them to use rather than using this App. After you become knowledgeable and comfortable in the use of your tool, you may find you don't use the App itself anymore. Feel free to delete it (you can always get it back from the Handibot website)</p>
-            <h3>Setting the XYZ Home Locations</h3>
-            	<p>Determining the zero location of each axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set, defining your Home Location.</p>
-            	<p>The back-off distance is determined at the factory and saved as a persistant variable. As you get more experienced, you may want to change the back-off distance in order to move your zero locations to better suit your work, for a particular project, or just to make a slight adjustment of your zero location. You can modify the back-off distance for each axis in the <code>Preferences</code> tab (above).</p>
-            	<p>Using the Set Home function in this app is the same thing as clicking on <strong>Macro#3</strong> in the system macros, where the motion instructions are actually stored. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably.</p> 
+            <p>This App contains a variety of "helper" functions and information for setting-up and using your tool. It's designed to help you learn about your tool and its operation. You can simplify the view by selecting <strong>Short Form</strong> after you get familiar with the functions. Most of the instructions are also available as single function "macros" in the <strong>Macros</strong> folder (left pane). After you become knowledgeable and comfortable in the use of your tool, you may find you don't use the App itself anymore. Feel free to delete it (you can always get it back from the Handibot website)</p>
+            <h3>Home Tool</h3>
+            	<p>This is the first thing that you will usually want to do after powering your tool up. Determining the zero location of each axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set, defining, or re-establishing, your Home Location for each axis. It is very accurate and allows you to always get back to the exact location you were at when the tool was shut down.</p>
+            	<p>The back-off distance that is used in this function set at the factory and saved as a persistant variable. As you get more experienced, you may want to change the back-off distance in order to move your zero locations to better suit your work, for a particular project, or just to make a slight adjustment of your zero location. You can modify the back-off distance for each axis in the <code>Preferences</code> tab (above).</p>
+            	<p>Using the Set Home function in this app is the same thing as clicking on <strong>Macro#3</strong> in the Macros folder. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably. [CustomCut in Sb4 = Macro in FabMo.]</p> 
 
         		<div class="well" id="cartesian-message">
-                  <p><strong>Your Handibot's Coordinate System</strong> </p>
-              		<p>Your tool moves around in a Cartesian coordinate system. The X axis (left/right) and the Y axis (front/back) are in the plane of the material. The X = 0 and Y = 0 locations are at the bottom left corner as you face the front of the tool. Moving the tool-head to the right is moving in increasing value in the X axis, moving it towards the back is moving it in increasing value the Y axis. Up/Down motion of the router is the  Z axis. Down is the negative direction. Zero in the Z is typically set at the height that the cutter tip is just touching the surface of the material (though for special purposes it can be set anywhere). To explore the coordinate system, Play with the keypad on in the red, DRO panel on the right:</p>
+                  <p><strong>Your Tool's Coordinate System</strong> </p>
+              		<p>Your tool moves around in a Cartesian coordinate system. The X axis (left/right) and the Y axis (front/back) are in the plane of the material. The X = 0 and Y = 0 locations are at the bottom left corner as you face the front of the tool. Moving the tool-head to the right is moving in increasing value in the X axis, moving it towards the back is moving it in increasing value the Y axis. In most uses, these coordinates are used as the tool's Base Coordinates. Temporary working coordinates can be set as offsets from these Base Coordinates. Up/Down motion of the router is the Z axis. Down is the negative direction. Zero in the Z is typically set (as a working coordinate, offset from the top stop) at the height that the cutter tip is just touching the surface of the material or the bed. To explore the coordinate system, play with the keypad on in the red, DRO panel on the right:</p>
               <button id="call-DRO-rollout" class="btn btn-primary">click here if the KEYPAD is not visble</button>
               <button id="call-DRO-hide" class="btn btn-primary">or, Hide the KEYPAD</button>
                   <p></p>
@@ -104,8 +103,8 @@
               		<h4><a class="btn btn-success" id="call-touch-and-go"> start: Touch-and-Go </a></h4>
             	</div>
 
-            <h3>Measuring Bit Length</h3>
-            	<p>Measuring Bit Length is sometimes called Z-Zeoring, because we are really determing the zero location for the tip of the cutter in the Z axis. More importantly for a Handibot, we are determining the back-off distance from the top Z-axis, stop to having the tip of the cutter exactly at the material (at Zero). Your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance that we call, "current_cutter_Zoffset". So it is not really a measurement of the actual length of the bit, but the determination of an offset distance that is based on the exposed length of the cutter.</p>
+            <h3>Z-Zero</h3>
+            	<p>Z-Zero is the short name for setting the zero location for the cutter. We are actually determining the cutter length and setting the 0 location for the tip in order to set the working location for the tip of the cutter in the Z axis. Using the Z-Zero functionality, your tool uses electrical contact with a Z-zero plate to tell exactly the distance the tip of the cutter from the top stop. It then adds the known distance from the Z-zero plate to the material surface in order to calculate an overall back-off distance from the top that we call, "current_cutter_Zoffset".</p>
             	<p>You will also see the "current_cutter_Zoffset" in the <code>Preferences</code> tab (above).</p>
 
         </div><!-- details pane -->

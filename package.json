@@ -3,10 +3,10 @@
   "main": "./index.html",
   "icon": "icon.png",
   "icon_color": "#9C210C",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Ted Hall + Ryan Sturmer + Jimmy Lucidarme + Brendan Collins",
   "website": "http://www.handibot.com",
-  "description": "Daily Handibot Start-Up and Info",
+  "description": "Daily Start-Up and Info",
   "id": "fabmo-fireup",
   "devDependencies": {
     "grunt": "^0.4.5",
