@@ -73,8 +73,8 @@
               <hr width = "90%" noshade>
               <span class="label label-warning"> SPECIALTY FUNCTIONS for Specific Need </span>
                 <p class="long"> </p>
-                <p class="long">Sometimes you will need to manually set the Z-zero location based on the current value rather than use automatic Z-Zero function. For example if you want to manually determine the correct 0 for the Z. First make sure your XYZ locations are initially accurate by running the Home Tool routine (or Macro#3). Then set the 0 for the Z where you would like it to be using the 0 button in the red panel (right panel). Click below ...</p>
-              <h3><a class="btn btn-success" id="call-set-z-zero"> Use Current Z-Location for Z-Zero </a> </h3>
+                <p class="long">Sometimes you will need to manually set the Z-zero location based on the current value rather than use automatic Z-Zero function. For example if you want to manually determine the correct 0 for the Z. First make sure your XYZ locations are initially accurate by running the Home Tool routine (or Macro#3). Then set the 0 for the Z where you would like it to be using the 0 (orange) button in the red panel (right side). Then, Click below ...</p>
+              <h3><a class="btn btn-success" id="call-set-z-zero"> Set Z-Zero to Current Offset </a> </h3>
                 <p> </p>
                 <p> </p>
 <!--
@@ -89,7 +89,7 @@
             <h2>Detailed Info on this FireUp! App</h2>
             <p>This App contains a variety of "helper" functions and information for setting-up and using your tool. It's designed to help you learn about your tool and its operation. You can simplify the view by selecting <strong>Short Form</strong> after you get familiar with the functions. Most of the instructions are also available as single function "macros" in the <strong>Macros</strong> folder (left pane). After you become knowledgeable and comfortable in the use of your tool, you may find you don't use the App itself anymore. Feel free to delete it (you can always get it back from the Handibot website)</p>
             <h3>Home Tool</h3>
-            	<p>This is the first thing that you will usually want to do after powering your tool up. Determining the zero location of each axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set, defining, or re-establishing, your Home Location for each axis. It is very accurate and allows you to always get back to the exact location you were at when the tool was shut down.</p>
+            	<p>Homing the Tool is the first thing that you will usually want to do after powering your tool up. Determining the zero location of each axis is automatically done for you by moving into the end-stops of the axis and then backing off an exact known distance to the location where Zero for the particular axis is set, defining, or re-establishing, your Home Location for each axis. It is very accurate and allows you to always get back to the exact location you were at when the tool was shut down. NOTE THAT IT WILL MAKE SOME NOISE at hit the END STOPS AGGRESSIVELY.</p>
             	<p>The back-off distance that is used in this function set at the factory and saved as a persistant variable. As you get more experienced, you may want to change the back-off distance in order to move your zero locations to better suit your work, for a particular project, or just to make a slight adjustment of your zero location. You can modify the back-off distance for each axis in the <code>Preferences</code> tab (above).</p>
             	<p>Using the Set Home function in this app is the same thing as clicking on <strong>Macro#3</strong> in the Macros folder. It also the same as using the <strong>[C3] Command</strong> in the Sb4 App or in the OpenSBP fabrication language. You can use each, interchangeably. [CustomCut in Sb4 = Macro in FabMo.]</p> 
 
@@ -113,8 +113,8 @@
         <!-- Preferences Pane -->
         <div class="tab-pane" id="tab-preferences">
           <h2>Preference Settings</h2>
-	          <p>Your Handibot comes with a number of variables with preset values that it uses in operations to assist you.  These variables all have default values, but you are able to modify them to suit your specific needs. After you change them, the values will persist even when the tool is turned off. These preference settings are conceptually at a higher, use-and-utility level than the values set in the System Configuration available in the left side pull out; the latter define the actual motion and mechanical operation of the tool.</p>
-	          <p>The preference settings are saved using a system of "persistent variables". There are several ways these persistent variables can be modified directly or by job files, but for the moment the simplest approach is to just change them here.</p>
+	          <p>Your Handibot comes with a number of preset variables that it uses in operations to assist you. These variables all have default values, but you are able to modify them to suit your specific needs. After you change them, the values will persist even when the tool is turned off. These preference settings are in additions to the System Configuration available in the left side pull out; the latter define the actual motion and mechanical operation of the tool.</p>
+	          <p>Preference settings are saved using a system of "persistent variables". There are several ways these persistent variables can be modified directly or by job files, the most direct approach is to just change them here. Make sure to hit the SAVE button after editing.</p>
 
        	    <!-- Responsive form for inputting preferences -->
 	        <div class="row">
